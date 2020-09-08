@@ -1,0 +1,9 @@
+<% tweets.each do |tweet| %>
+  <p>
+    <b><%= link_to tweet.user.email, profile_path(tweet.user_id) %>:</b>
+    <br>
+    <%= tweet.created_at.strftime("%Y-%m-%d %H:%M %p") %>
+    <br/>
+    <%= tweet.text %>
+  </p>
+<% end %>

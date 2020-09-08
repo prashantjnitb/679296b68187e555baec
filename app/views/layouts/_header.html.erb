@@ -1,0 +1,16 @@
+<p class="header">
+  <% if current_user.present? %>
+    <%=link_to "Tweets", root_path, class: 'padding_10px' %>
+    <%=link_to "All Users", profiles_path, class: 'padding_10px' %>
+    <%=link_to "My Profile", profile_path(current_user.id), class: 'padding_10px' %>
+    <%=link_to "Logout", destroy_user_session_path, method: :delete, class: 'padding_10px' %>
+  <% else %>
+    <%=link_to "Login", new_user_session_path %>
+  <% end %>
+</p>
+<% if notice.present? %>
+  <p class="notice"><%= notice %></p>
+<% end %>
+<% if alert.present? %>
+  <p class="alert"><%= alert %></p>
+<% end %>

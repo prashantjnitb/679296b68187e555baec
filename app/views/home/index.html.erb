@@ -1,0 +1,13 @@
+<h1>Tweets from your followings:</h1>
+
+<div style="width:40%;margin-left: 30%;"/>
+  <h5>
+    <% if params[:order_by]=="ASC" %>
+      <%= link_to "Order by Newest First", root_path({order_by: "DESC"}), class: 'float_right' %></b>
+    <% else %>
+      <%= link_to "Order by Oldest First", root_path({order_by: "ASC"}), class: 'float_right' %></b>
+    <% end %>
+  </h5>
+  <br>
+  <%= render partial: '/home/tweets', locals: { tweets: @tweets } %>
+<div>
